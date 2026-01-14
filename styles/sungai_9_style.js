@@ -1,7 +1,7 @@
 var size = 0;
 var placement = 'point';
 
-var style_jalanprovinsi_11 = function(feature, resolution){
+var style_sungai_9 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -21,7 +21,7 @@ var style_jalanprovinsi_11 = function(feature, resolution){
         labelText = String("");
     }
     var style = [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(155,51,13,1.0)', lineDash: null, lineCap: 'round', lineJoin: 'round', width: 5.699999999999999}),
+        stroke: new ol.style.Stroke({color: 'rgba(100,181,246,1.0)', lineDash: null, lineCap: 'round', lineJoin: 'round', width: 0.988}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)
