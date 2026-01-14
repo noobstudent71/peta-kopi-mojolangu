@@ -1,7 +1,7 @@
 var size = 0;
 var placement = 'point';
 
-var style_bataspemukiman_3 = function(feature, resolution){
+var style_bataspemukiman_4 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}

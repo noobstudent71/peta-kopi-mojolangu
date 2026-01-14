@@ -147,8 +147,8 @@ var featureOverlay = new ol.layer.Vector({
     updateWhileInteracting: true // optional, for instant visual feedback
 });
 
-var doHighlight = false;
-var doHover = false;
+var doHighlight = true;
+var doHover = true;
 
 function createPopupField(currentFeature, currentFeatureKeys, layer) {
     var popupText = '';
@@ -562,7 +562,7 @@ map.addControl(Abstract);
 //layer search
 
 var searchLayer = new SearchLayer({
-    layer: lyr_coffeshop_10,
+    layer: lyr_coffeshop_11,
     colName: 'alamat',
     zoom: 10,
     collapsed: true,
