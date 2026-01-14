@@ -150,24 +150,24 @@ var lyr_sungai_9 = new ol.layer.Vector({
                 interactive: true,
                 title: '<img src="styles/legend/sungai_9.png" /> sungai'
             });
-var format_coffesho_10 = new ol.format.GeoJSON();
-var features_coffesho_10 = format_coffesho_10.readFeatures(json_coffesho_10, 
+var format_coffeshop_10 = new ol.format.GeoJSON();
+var features_coffeshop_10 = format_coffeshop_10.readFeatures(json_coffeshop_10, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_coffesho_10 = new ol.source.Vector({
+var jsonSource_coffeshop_10 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_coffesho_10.addFeatures(features_coffesho_10);
-var lyr_coffesho_10 = new ol.layer.Vector({
+jsonSource_coffeshop_10.addFeatures(features_coffeshop_10);
+var lyr_coffeshop_10 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_coffesho_10, 
-                style: style_coffesho_10,
-                popuplayertitle: 'coffesho[',
+                source:jsonSource_coffeshop_10, 
+                style: style_coffeshop_10,
+                popuplayertitle: 'coffeshop',
                 interactive: true,
-                title: '<img src="styles/legend/coffesho_10.png" /> coffesho['
+                title: '<img src="styles/legend/coffeshop_10.png" /> coffeshop'
             });
 
-lyr_fasilitasumum_0.setVisible(true);lyr_batasareamojolangu_1.setVisible(true);lyr_batasareatunjungsekar_2.setVisible(true);lyr_bataspemukiman_3.setVisible(true);lyr_jalanperumahan_4.setVisible(true);lyr_jalandesa_5.setVisible(true);lyr_jalanraya_6.setVisible(true);lyr_jalangang_7.setVisible(true);lyr_jalanprovinsi_8.setVisible(true);lyr_sungai_9.setVisible(true);lyr_coffesho_10.setVisible(true);
-var layersList = [lyr_fasilitasumum_0,lyr_batasareamojolangu_1,lyr_batasareatunjungsekar_2,lyr_bataspemukiman_3,lyr_jalanperumahan_4,lyr_jalandesa_5,lyr_jalanraya_6,lyr_jalangang_7,lyr_jalanprovinsi_8,lyr_sungai_9,lyr_coffesho_10];
+lyr_fasilitasumum_0.setVisible(true);lyr_batasareamojolangu_1.setVisible(true);lyr_batasareatunjungsekar_2.setVisible(true);lyr_bataspemukiman_3.setVisible(true);lyr_jalanperumahan_4.setVisible(true);lyr_jalandesa_5.setVisible(true);lyr_jalanraya_6.setVisible(true);lyr_jalangang_7.setVisible(true);lyr_jalanprovinsi_8.setVisible(true);lyr_sungai_9.setVisible(true);lyr_coffeshop_10.setVisible(true);
+var layersList = [lyr_fasilitasumum_0,lyr_batasareamojolangu_1,lyr_batasareatunjungsekar_2,lyr_bataspemukiman_3,lyr_jalanperumahan_4,lyr_jalandesa_5,lyr_jalanraya_6,lyr_jalangang_7,lyr_jalanprovinsi_8,lyr_sungai_9,lyr_coffeshop_10];
 lyr_fasilitasumum_0.set('fieldAliases', {'id': 'id', 'nama': 'nama', 'luas': 'luas', 'hektar': 'hektar', });
 lyr_batasareamojolangu_1.set('fieldAliases', {'id': 'id', 'nama': 'nama', 'luas': 'luas', 'hektar': 'hektar', });
 lyr_batasareatunjungsekar_2.set('fieldAliases', {'id': 'id', 'nama': 'nama', 'luas': 'luas', 'hektar': 'hektar', });
@@ -178,7 +178,7 @@ lyr_jalanraya_6.set('fieldAliases', {'id': 'id', 'nama jalan': 'nama jalan', 'pa
 lyr_jalangang_7.set('fieldAliases', {'id': 'id', 'nama jalan': 'nama jalan', 'panjang': 'panjang', 'panjang_km': 'panjang_km', });
 lyr_jalanprovinsi_8.set('fieldAliases', {'id': 'id', 'nama jalan': 'nama jalan', 'panjang': 'panjang', 'panjang_km': 'panjang_km', });
 lyr_sungai_9.set('fieldAliases', {'id': 'id', 'nma sungai': 'nma sungai', 'panjang': 'panjang', 'panjang_km': 'panjang_km', });
-lyr_coffesho_10.set('fieldAliases', {'id': 'id', 'nama tempt': 'nama tempt', 'alamat': 'alamat', });
+lyr_coffeshop_10.set('fieldAliases', {'id': 'id', 'nama tempt': 'nama tempt', 'alamat': 'alamat', });
 lyr_fasilitasumum_0.set('fieldImages', {'id': '', 'nama': '', 'luas': '', 'hektar': '', });
 lyr_batasareamojolangu_1.set('fieldImages', {'id': '', 'nama': '', 'luas': '', 'hektar': '', });
 lyr_batasareatunjungsekar_2.set('fieldImages', {'id': '', 'nama': '', 'luas': '', 'hektar': '', });
@@ -189,7 +189,7 @@ lyr_jalanraya_6.set('fieldImages', {'id': '', 'nama jalan': '', 'panjang': '', '
 lyr_jalangang_7.set('fieldImages', {'id': '', 'nama jalan': '', 'panjang': '', 'panjang_km': '', });
 lyr_jalanprovinsi_8.set('fieldImages', {'id': '', 'nama jalan': '', 'panjang': '', 'panjang_km': '', });
 lyr_sungai_9.set('fieldImages', {'id': '', 'nma sungai': '', 'panjang': '', 'panjang_km': '', });
-lyr_coffesho_10.set('fieldImages', {'id': '', 'nama tempt': '', 'alamat': '', });
+lyr_coffeshop_10.set('fieldImages', {'id': '', 'nama tempt': '', 'alamat': '', });
 lyr_fasilitasumum_0.set('fieldLabels', {'id': 'no label', 'nama': 'no label', 'luas': 'no label', 'hektar': 'no label', });
 lyr_batasareamojolangu_1.set('fieldLabels', {'id': 'no label', 'nama': 'no label', 'luas': 'no label', 'hektar': 'no label', });
 lyr_batasareatunjungsekar_2.set('fieldLabels', {'id': 'no label', 'nama': 'no label', 'luas': 'no label', 'hektar': 'no label', });
@@ -200,7 +200,7 @@ lyr_jalanraya_6.set('fieldLabels', {'id': 'no label', 'nama jalan': 'no label', 
 lyr_jalangang_7.set('fieldLabels', {'id': 'no label', 'nama jalan': 'no label', 'panjang': 'no label', 'panjang_km': 'no label', });
 lyr_jalanprovinsi_8.set('fieldLabels', {'id': 'no label', 'nama jalan': 'no label', 'panjang': 'no label', 'panjang_km': 'no label', });
 lyr_sungai_9.set('fieldLabels', {'id': 'no label', 'nma sungai': 'no label', 'panjang': 'no label', 'panjang_km': 'no label', });
-lyr_coffesho_10.set('fieldLabels', {'id': 'no label', 'nama tempt': 'no label', 'alamat': 'no label', });
-lyr_coffesho_10.on('precompose', function(evt) {
+lyr_coffeshop_10.set('fieldLabels', {'id': 'no label', 'nama tempt': 'no label', 'alamat': 'no label', });
+lyr_coffeshop_10.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });

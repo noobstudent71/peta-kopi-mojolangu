@@ -494,70 +494,60 @@ var bottomRightContainerDiv = document.getElementById('bottom-right-container')
 
 //title
 
+var Title = new ol.control.Control({
+    element: (() => {
+        var titleElement = document.createElement('div');
+        titleElement.className = 'top-right-title ol-control';
+        titleElement.innerHTML = '<h2 class="project-title">Peta Persebaran CoffeShop Di Daerah Mojolangu</h2>';
+        return titleElement;
+    })(),
+    target: 'top-right-container'
+});
+map.addControl(Title)
+    
 //abstract
+
+var Abstract = new ol.control.Control({
+    element: (() => {
+        var titleElement = document.createElement('div');
+        titleElement.className = 'top-right-abstract ol-control';
+        titleElement.id = 'abstract';
+
+        var linkElement = document.createElement('a');
+
+        if (176 > 240) {
+            linkElement.setAttribute("onmouseenter", "showAbstract()");
+            linkElement.setAttribute("onmouseleave", "hideAbstract()");
+            linkElement.innerHTML = 'i';
+
+            window.hideAbstract = function() {
+                linkElement.classList.add("project-abstract");
+                linkElement.classList.remove("project-abstract-uncollapsed");
+                linkElement.innerHTML = 'i';
+            }
+
+            window.showAbstract = function() {
+                linkElement.classList.remove("project-abstract");
+                linkElement.classList.add("project-abstract-uncollapsed");
+                linkElement.innerHTML = 'peta ini menyajikan informasi tentang informasi line meliputi batas daerah,sungai,jalan provinsi,jalan gang,jalan raya,jalan desa,jalan perumahan,batas pemukiman,fasilitas umum';
+            }
+
+            hideAbstract();
+        } else {
+            linkElement.classList.add("project-abstract-uncollapsed");
+            linkElement.innerHTML = 'peta ini menyajikan informasi tentang informasi line meliputi batas daerah,sungai,jalan provinsi,jalan gang,jalan raya,jalan desa,jalan perumahan,batas pemukiman,fasilitas umum';
+        }
+
+        titleElement.appendChild(linkElement);
+        return titleElement;
+    })(),
+    target: 'top-right-container'
+});
+map.addControl(Abstract);
 
 
 //geolocate
 
-	let isTracking = false;
-
-	const geolocateButton = document.createElement('button');
-	geolocateButton.className = 'geolocate-button fa fa-map-marker';
-	geolocateButton.title = 'Geolocalizza';
-
-	const geolocateControl = document.createElement('div');
-	geolocateControl.className = 'ol-unselectable ol-control geolocate';
-	geolocateControl.appendChild(geolocateButton);
-	map.getTargetElement().appendChild(geolocateControl);
-
-	const accuracyFeature = new ol.Feature();
-	const positionFeature = new ol.Feature({
-	  style: new ol.style.Style({
-		image: new ol.style.Circle({
-		  radius: 6,
-		  fill: new ol.style.Fill({ color: '#3399CC' }),
-		  stroke: new ol.style.Stroke({ color: '#fff', width: 2 }),
-		}),
-	  }),
-	});
-
-  const geolocateOverlay = new ol.layer.Vector({
-	  source: new ol.source.Vector({
-		features: [accuracyFeature, positionFeature],
-	  }),
-	});
-	
-	const geolocation = new ol.Geolocation({
-	  projection: map.getView().getProjection(),
-	});
-
-	geolocation.on('change:accuracyGeometry', function () {
-	  accuracyFeature.setGeometry(geolocation.getAccuracyGeometry());
-	});
-
-	geolocation.on('change:position', function () {
-	  const coords = geolocation.getPosition();
-	  positionFeature.setGeometry(coords ? new ol.geom.Point(coords) : null);
-	});
-
-	geolocation.setTracking(true);
-
-	function handleGeolocate() {
-	  if (isTracking) {
-		map.removeLayer(geolocateOverlay);
-		isTracking = false;
-	  } else if (geolocation.getTracking()) {
-		map.addLayer(geolocateOverlay);
-		const pos = geolocation.getPosition();
-		if (pos) {
-		  map.getView().setCenter(pos);
-		}
-		isTracking = true;
-	  }
-	}
-
-	geolocateButton.addEventListener('click', handleGeolocate);
-	geolocateButton.addEventListener('touchstart', handleGeolocate);
 
 
 //measurement
@@ -572,7 +562,7 @@ var bottomRightContainerDiv = document.getElementById('bottom-right-container')
 //layer search
 
 var searchLayer = new SearchLayer({
-    layer: lyr_coffesho_10,
+    layer: lyr_coffeshop_10,
     colName: 'alamat',
     zoom: 10,
     collapsed: true,
@@ -590,11 +580,22 @@ document.getElementsByClassName('search-layer-input-search')[0].placeholder = 'S
 //layerswitcher
 
 var layerSwitcher = new ol.control.LayerSwitcher({
-    tipLabel: "Layers",
-    target: 'top-right-container'
-});
+    activationMode: 'click',
+	startActive: true,
+	tipLabel: "Layers",
+    target: 'top-right-container',
+	collapseLabel: '»',
+	collapseTipLabel: 'Close'
+    });
 map.addControl(layerSwitcher);
-    
+if (hasTouchScreen || isSmallScreen) {
+	document.addEventListener('DOMContentLoaded', function() {
+		setTimeout(function() {
+			layerSwitcher.hidePanel();
+		}, 500);
+	});	
+}
+
 
 
 
